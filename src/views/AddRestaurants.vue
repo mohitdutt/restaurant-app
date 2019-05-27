@@ -23,7 +23,6 @@
           </div>
         </div>
 
-
         <div class="row mt-3">
           <div class="col-md-6">
             <b-form-group id="input-group-3" label="City:" label-for="input-3" class="formG">
@@ -75,38 +74,37 @@
 
 <script>
 import Request from '@/services/Request.js'
-  export default {
-    data() {
-      return {
-        form: {
-          restaurantName: '',
-          address: '',
-          city: '',
-          costForTwo: '',
-          userName: '',
-          phone: '',
-          email: ''
-        },
-        show: true
-      }
-    },
-    methods: {
-
-      onSubmit(evt) {debugger
-        const payload = this.form;
-        Request.postData("AddRestaurant", payload).then((response) => {
-          if ( response.status === 200 ) {
-            alert("Restaurant added successfully!");
-          }
-        }).catch((error) => {
-          if ( error.response.status === 500 ) {
-            alert("Error adding new Restaurant, Please fill all fields and try again.");
-          }
-      });
-      event.target.reset();
-      }
+export default {
+  data () {
+    return {
+      form: {
+        restaurantName: '',
+        address: '',
+        city: '',
+        costForTwo: '',
+        userName: '',
+        phone: '',
+        email: ''
+      },
+      show: true
+    }
+  },
+  methods: {
+    onSubmit (evt) {
+      const payload = this.form
+      Request.postData('AddRestaurant', payload).then((response) => {
+        if (response.status === 200) {
+          alert('Restaurant added successfully!')
+        }
+      }).catch((error) => {
+        if (error.response.status === 500) {
+          alert('Error adding new Restaurant, Please fill all fields and try again.')
+        }
+      })
+      event.target.reset()
     }
   }
+}
 </script>
 
 <style scoped>
