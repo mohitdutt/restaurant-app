@@ -1,10 +1,10 @@
 <template>
   <div class='demo-app'>
-    <div class='demo-app-top'>
+    <!-- <div class='demo-app-top'>
       <button @click="toggleWeekends">toggle weekends</button>
       <button @click="gotoPast">go to a date in the past</button>
       (also, click a date/time to add an event)
-    </div>
+    </div> -->
     <FullCalendar
       class='demo-app-calendar'
       ref="fullCalendar"
@@ -40,26 +40,35 @@ export default {
       ],
       calendarWeekends: true,
       calendarEvents: [ // initial event data
-        { title: 'Event Now', start: new Date() }
-      ]
+        // { title: 'Event Now', start: new Date() }
+      ],
+      checkCount: 0,
+      startDate: {},
+      endDate: {},
+      calenderObj: {}
     }
   },
   methods: {
-    toggleWeekends () {
-      this.calendarWeekends = !this.calendarWeekends // update a property
-    },
-    gotoPast () {
-      let calendarApi = this.$refs.fullCalendar.getApi() // from the ref="..."
-      calendarApi.gotoDate('2000-01-01') // call a method on the Calendar object
-    },
+    // toggleWeekends () {
+    //   this.calendarWeekends = !this.calendarWeekends // update a property
+    // },
+    // gotoPast () {
+    //   let calendarApi = this.$refs.fullCalendar.getApi() // from the ref="..."
+    //   calendarApi.gotoDate('2000-01-01') // call a method on the Calendar object
+    // },
     handleDateClick (arg) {
-      if (confirm('Would you like to add an event to ' + arg.dateStr + ' ?')) {
-        this.calendarEvents.push({ // add new event data
-          title: 'New Event',
-          start: arg.date,
-          allDay: arg.allDay
-        })
+      if (this.checkCount === 0) {
+        this.startDate = arg.date
+        this.endDate = arg.date
+      } else {
+        this.startDate = this.startDate
+        this.endDate = arg.date
       }
+      console.log('calenderEvents', this.calendarEvents)
+      this.calendarEvents.push({
+        title: 'new event', start: this.startDate, end: this.endDate, 'allDay': arg.allDay
+      })
+      this.checkCount++
     }
   }
 }
@@ -68,9 +77,9 @@ export default {
 <style lang='scss'>
 // you must include each plugins' css
 // paths prefixed with ~ signify node_modules
-// @import '~@fullcalendar/core/main.css';
-// @import '~@fullcalendar/daygrid/main.css';
-// @import '~@fullcalendar/timegrid/main.css';
+@import '../../node_modules/@fullcalendar/core/main.css';
+@import '../../node_modules/@fullcalendar/daygrid/main.css';
+@import '../../node_modules/@fullcalendar/timegrid/main.css';
 .demo-app {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 14px;

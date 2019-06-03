@@ -1,7 +1,7 @@
 <template>
   <div class="AddRestaurants">
     <div class="row AddRestaurantsRow">
-      <h3>Signup</h3>
+      <!-- <h3>Signup</h3> -->
     </div>
     <div class="container contDetails">
       <b-form @submit="onSubmit" v-if="show" style="padding:20px;">
@@ -42,6 +42,12 @@
 
         <div class="row mt-3">
           <b-button type="submit" size="lg" variant="outline-secondary" class="submitButton">Signup</b-button>
+        </div>
+
+        <div class="row mt-3">
+          <span>Or signup using</span>
+          <b-button type="submit" size="lg" variant="outline-secondary" class="submitButton"></b-button>
+          <b-button type="submit" size="lg" variant="outline-secondary" class="submitButton"></b-button>
         </div>
       </b-form>
     </div>
