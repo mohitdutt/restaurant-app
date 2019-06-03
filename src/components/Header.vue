@@ -24,7 +24,7 @@
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
         <div class="signin-btn">
-            <router-link to="/signin" class="menu-item">
+            <router-link to="/signup" class="menu-item">
                 <b-button class="signin textColor" type="primary">Sign in</b-button>
             </router-link>
         </div>

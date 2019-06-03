@@ -1,5 +1,5 @@
 <template>
-  <div><br><br><br><br>
+  <div>
     <div class="mt-4 footer">
       <div class="row">
         <div class="col-3 mt-2 check">
@@ -9,13 +9,13 @@
         <div class="col-8 check2">
             <div class="row mt-3 check3" style="float:right;">
               <div class="socialLink">
-                  <span class="socialLinkSpan">f</span>
+                  <span class="socialLinkSpan"><i class="fab fa-google-plus-g"></i></span>
               </div>
               <div class="socialLink">
-                  <span class="socialLinkSpan">f</span>
+                  <span class="socialLinkSpan"><i class="fab fa-facebook-f"></i></span>
               </div>
               <div class="socialLink">
-                  <span class="socialLinkSpan">f</span>
+                  <span class="socialLinkSpan"><i class="fab fa-twitter"></i></span>
               </div>
               <div class="socialLink">
                   <span class="socialLinkSpan">f</span>
@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="links"></div>
-      <div class="copyright">Powered by Shoonya Technologies Ltd. © 2019 All Rights Reserved</div>
+      <div class="copyright">Powered by Qexon Technologies Ltd. © 2019 All Rights Reserved</div>
     </div>
   </div>
 </template>

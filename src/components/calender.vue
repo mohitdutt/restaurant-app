@@ -1,10 +1,5 @@
 <template>
   <div class='demo-app'>
-    <!-- <div class='demo-app-top'>
-      <button @click="toggleWeekends">toggle weekends</button>
-      <button @click="gotoPast">go to a date in the past</button>
-      (also, click a date/time to add an event)
-    </div> -->
     <FullCalendar
       class='demo-app-calendar'
       ref="fullCalendar"
@@ -40,7 +35,6 @@ export default {
       ],
       calendarWeekends: true,
       calendarEvents: [ // initial event data
-        // { title: 'Event Now', start: new Date() }
       ],
       checkCount: 0,
       startDate: {},
@@ -49,13 +43,6 @@ export default {
     }
   },
   methods: {
-    // toggleWeekends () {
-    //   this.calendarWeekends = !this.calendarWeekends // update a property
-    // },
-    // gotoPast () {
-    //   let calendarApi = this.$refs.fullCalendar.getApi() // from the ref="..."
-    //   calendarApi.gotoDate('2000-01-01') // call a method on the Calendar object
-    // },
     handleDateClick (arg) {
       if (this.checkCount === 0) {
         this.startDate = arg.date

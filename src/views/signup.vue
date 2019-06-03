@@ -41,13 +41,24 @@
         </div>
 
         <div class="row mt-3">
-          <b-button type="submit" size="lg" variant="outline-secondary" class="submitButton">Signup</b-button>
+          <div class="col-md-6">
+            <b-button type="submit" size="lg" variant="outline-secondary" class="submitButton" style="float:right;">Signup</b-button>
+          </div>
+
+          <div class="col-md-6">
+              <span>Or signup using</span>
+            <b-button type="submit" size="lg" variant="outline-secondary" class="fab1"> <i class="fab fa-google-plus-g"></i></b-button>
+            <b-button type="submit" size="lg" variant="outline-secondary" class="fab1"> <i class="fab fa-facebook-f"></i></b-button>
+            <b-button type="submit" size="lg" variant="outline-secondary" class="fab1"> <i class="fab fa-twitter"></i></b-button>
+          </div>
         </div>
 
         <div class="row mt-3">
-          <span>Or signup using</span>
-          <b-button type="submit" size="lg" variant="outline-secondary" class="submitButton"></b-button>
-          <b-button type="submit" size="lg" variant="outline-secondary" class="submitButton"></b-button>
+
+        </div>
+
+        <div class="row">
+
         </div>
       </b-form>
     </div>
@@ -90,6 +101,9 @@ export default {
 </script>
 
 <style scoped>
+ .AddRestaurants{
+    height: 800px;
+  }
   .AddRestaurantsRow{
     display: -webkit-inline-box;
   }
@@ -111,5 +125,11 @@ export default {
   }
   .submitButton{
     margin: 0 auto
+  }
+  .fab{
+    color: rgb(106, 106, 177)
+  }
+  .fab1{
+    border: none;
   }
 </style>

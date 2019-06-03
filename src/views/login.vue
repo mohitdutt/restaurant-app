@@ -1,12 +1,10 @@
 <template>
   <div class="AddRestaurants">
     <div class="row AddRestaurantsRow">
-      <h3>Signup</h3>
+      <h3>Login</h3>
     </div>
     <div class="container contDetails">
       <b-form @submit="onSubmit" v-if="show" style="padding:20px;">
-        <div class="row mt-3">
-        </div>
 
         <div class="row mt-3">
           <div class="col-md-12">
@@ -67,6 +65,9 @@ export default {
 </script>
 
 <style scoped>
+  .AddRestaurants{
+    height: 800px;
+  }
   .AddRestaurantsRow{
     display: -webkit-inline-box;
   }
